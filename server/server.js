@@ -34,7 +34,7 @@ function createConfusionMatrix(counter, classNames){
   return confusionMatrix;
 }
 
-app.get('/confusionmatrix', (req, res) => {
+app.get('/executionResult', (req, res) => {
   const rawdata = fs.readFileSync('data/classification.json');
   const perfData = JSON.parse(rawdata);
   const {counter, classNames} = perfData.averagesList[0];

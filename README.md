@@ -1,14 +1,23 @@
 # RapidMiner pair coding exercise
 
-Task 1.
-Execution takes time
+In the skeleton project you already have a frontend and a server component. Each can be started by `npm start` in their folder.
+
+FE is a CRA app, axios and Ant DEsign are already added.
+
+BE is a minimal Express server with 3 endpoints: `POST /execute`, `GET /executionStatus`, `GET /executionResult`
+
+Task 1. Basic execution flow
+
+Execution (e.g. model training) takes time so FE needs to wait until results can be loaded.
+
 * modify `/execute` and `/executionStatus` endpoints so that FE can poll the status until it is complete
 * executionStatus should return these values: `execution`, `error`, `result`
 * simulate execution with a timer
 * modify FE so that it only loads result when status is `complete`
 
-Task 2: 
-* Convert the raw performance data into a ConfusionMatrix 
+Task 2: Confusion Matrix
+
+* Convert the raw performance data into a confusion matrix consumable by the FE
 * display the matrix in an Ant Table - you can see an example screenshot in `conf_matrix.png`
 
 
