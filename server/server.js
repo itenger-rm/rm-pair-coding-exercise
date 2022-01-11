@@ -28,17 +28,17 @@ function createConfusionMatrix(counter, classNames){
   const recalls = [];
   const confusionMatrix = {};
   
-  // TODO calculate precision and recall values 
+  // TODO return all necessary data for the FE to display a confusion matrix
+  // - calculate precision and recall values 
 
   return confusionMatrix;
 }
 
-app.get('/costmatrix', (req, res) => {
+app.get('/confusionmatrix', (req, res) => {
   const rawdata = fs.readFileSync('data/classification.json');
   const perfData = JSON.parse(rawdata);
   const {counter, classNames} = perfData.averagesList[0];
   const confusionMatrix = createConfusionMatrix(counter, classNames);
-  console.log(confusionMatrix);
   res.json(confusionMatrix);
 });
 

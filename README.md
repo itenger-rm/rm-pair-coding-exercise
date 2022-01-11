@@ -8,8 +8,8 @@ Execution takes time
 * modify FE so that it only loads result when status is `complete`
 
 Task 2: 
-* Convert the raw performance data into a ConfusionMatrix
-*  display the matrix in an Ant Table
+* Convert the raw performance data into a ConfusionMatrix 
+* display the matrix in an Ant Table - you can see an example screenshot in `conf_matrix.png`
 
 
 ## Confusion Matrix
