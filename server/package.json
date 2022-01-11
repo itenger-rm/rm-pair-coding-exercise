@@ -1,0 +1,23 @@
+{
+  "name": "rm-pair-coding-exercise-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itenger-rm/rm-pair-coding-exercise.git"
+  },
+  "author": "itenger@rapidminer.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itenger-rm/rm-pair-coding-exercise/issues"
+  },
+  "homepage": "https://github.com/itenger-rm/rm-pair-coding-exercise#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  }
+}
