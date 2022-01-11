@@ -1,29 +1,51 @@
-import {useEffect} from 'react';
-import axios from 'axios';
+import {useCallback, useEffect, useState} from 'react';
+import {Button} from 'antd'
 
-const axiosClient = axios.create({
-  baseURL: 'http://localhost:8008',
-  headers: { Accept: 'application/json;charset=UTF-8' }
-});
+import axiosInstance from './axiosInstance';
+import useExecutionStatus from './hooks/useExecutionStatus'
+import DataTable from './DataTable'
+
+import 'antd/dist/antd.css';
+import './App.css'
+
+const taskId = 'classification';
 
 function App() {
+  const [dataSource, setDataSource] = useState(null)
+  const {status: pollStatus, startPolling} = useExecutionStatus({ taskId })
 
-  useEffect(()=>{
-    const taskId = 'classification';
+  const onClick = useCallback(() => {
+    axiosInstance.post('/execute', {
+        taskId
+      }).then((response)=>{
+        console.log("execute response", response.data)
+        startPolling()
+      })
+      .catch((error)=>{
+        console.log("execute error", error);
+      })
+  }, [startPolling])
 
-    axiosClient.post('/execute', {
-      taskId
-    }).then((response)=>{
-      console.log("execute response", response.data)
+  useEffect(() => {
+    axiosInstance.get('/executionResult').then((response) => {
+      console.log("executionResult response", response.data)
+      setDataSource(response.data.counter)
     })
-    .catch((error)=>{
-      console.log("execute error", error);
-    })
-  }, []);
+  }, [])
 
   return (
     <div className="App">
       <h1>Pair coding exercise</h1>
+
+      <div>
+        {pollStatus}
+      </div>
+
+      <Button type="primary" onClick={onClick}>
+        Primary Button
+      </Button>
+
+      {dataSource && <DataTable dataSource={dataSource}/>}
     </div>
   );
 }
