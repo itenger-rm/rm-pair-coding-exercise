@@ -6,7 +6,7 @@ FE is a CRA app, axios and Ant DEsign are already added.
 
 BE is a minimal Express server with 3 endpoints: `POST /execute`, `GET /executionStatus`, `GET /executionResult`
 
-Task 1. Basic execution flow
+### Task 1. Basic execution flow
 
 Execution (e.g. model training) takes time so FE needs to wait until results can be loaded.
 
@@ -15,13 +15,11 @@ Execution (e.g. model training) takes time so FE needs to wait until results can
 * simulate execution with a timer
 * modify FE so that it only loads result when status is `complete`
 
-Task 2: Confusion Matrix
+### Task 2: Confusion Matrix
 
 * Convert the raw performance data into a confusion matrix consumable by the FE
 * display the matrix in an Ant Table - you can see an example screenshot in `conf_matrix.png`
 
-
-## Confusion Matrix
 
 The confusion matrix is a visualisation of the models performance, it contains precision and recall values for each class.
 
