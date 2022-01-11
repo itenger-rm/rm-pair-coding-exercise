@@ -2,7 +2,7 @@
 
 In the skeleton project you already have a frontend and a server component. Each can be started by `npm start` in their folder.
 
-FE is a CRA app, axios and Ant DEsign are already added.
+FE is a CRA app, axios and Ant Design are already added.
 
 BE is a minimal Express server with 3 endpoints: `POST /execute`, `GET /executionStatus`, `GET /executionResult`
 
